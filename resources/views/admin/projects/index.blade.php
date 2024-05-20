@@ -16,12 +16,13 @@
                 <tbody>
                     @forelse ($projects as $project)
                         <tr class="">
-                            <td scope="row">{{ $project->id }}</td>
-                            <td>{{ $project->title }}</td>
-                            <td>{{ $project->slug }}</td>
+                            <a href="{{ route('admin.projects.show', $project) }}">
+                                <td scope="row">{{ $project->id }}</td>
+                                <td>{{ $project->title }}</td>
+                                <td>{{ $project->slug }}</td>
+                            </a>
                             <td>View/Edit/Delete</td>
                         </tr>
-
                     @empty
                         <tr class="">
                             <td scope="row" colspan="5">No Projects</td>
