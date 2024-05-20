@@ -2,6 +2,14 @@
 
 @section('content')
     <div class="container">
+        <section class="py-4">
+            <div class="d-flex justify-content-between">
+                <h1>MATTE'S PROJECTS</h1>
+                <div>
+                    <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}">ADD</a>
+                </div>
+            </div>
+        </section>
 
         <div class="table-responsive">
             <table class="table table-light">
@@ -16,12 +24,14 @@
                 <tbody>
                     @forelse ($projects as $project)
                         <tr class="">
-                            <a href="{{ route('admin.projects.show', $project) }}">
-                                <td scope="row">{{ $project->id }}</td>
-                                <td>{{ $project->title }}</td>
-                                <td>{{ $project->slug }}</td>
-                            </a>
-                            <td>View/Edit/Delete</td>
+                            <td scope="row">{{ $project->id }}</td>
+                            <td>{{ $project->title }}</td>
+                            <td>{{ $project->slug }}</td>
+
+                            <td>
+                                <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">View</a>
+                                /Edit/Delete
+                            </td>
                         </tr>
                     @empty
                         <tr class="">
@@ -32,9 +42,6 @@
                 </tbody>
             </table>
         </div>
-
-
-
-
+        {{ $projects->links('pagination::bootstrap-5') }}
     </div>
 @endsection
