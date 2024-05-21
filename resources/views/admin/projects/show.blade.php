@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container py-4">
+        @include('partials.message-confirm')
+
 
         <div class="row">
             <div class="col-4 py-5 text-center">

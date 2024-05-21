@@ -6,6 +6,7 @@
             <h1>EDIT PROJECT</h1>
         </div>
         @include('partials.validation-errors')
+        @include('partials.message-confirm')
 
         <form action="{{ route('admin.projects.update', $project) }}" method="post">
             @csrf

@@ -11,6 +11,7 @@
                 </div>
             </div>
         </section>
+        @include('partials.message-confirm')
 
         <div class="table-responsive">
             <table class="table table-light">

@@ -42,7 +42,7 @@ class ProjectController extends Controller
         //creiamo
         Project::create($validated);
         //reindiriziamo
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('message', 'Project Create Sucessufully');
     }
 
     /**
@@ -66,9 +66,10 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $project->update($request->all());
+        $validated = $request->validated();
+        $project->update($validated);
 
-        return to_route('admin.projects.show', $project);
+        return to_route('admin.projects.show', $project)->with('message', 'Project Update Sucessufully');
     }
 
     /**
