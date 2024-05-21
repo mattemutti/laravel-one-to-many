@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-between">
                 <h1>MATTE'S PROJECTS</h1>
                 <div>
-                    <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}">ADD</a>
+                    <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}"><i class="fa fa-pencil" aria-hidden="true"></i> NewProject</a>
                 </div>
             </div>
         </section>

@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
+use Faker\Generator as Faker;
 
 class ProjectController extends Controller
 {
@@ -23,15 +24,25 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProjectRequest $request)
+    public function store(StoreProjectRequest $request, Faker $faker)
     {
-        //
+        //dd($request->all());
+        //validiamo
+        $validated = $request->validated();
+
+        $slug = $request->title;
+        $validated['slug'] = $slug;
+
+        //creiamo
+        Project::create($validated);
+        //reindiriziamo
+        return to_route('admin.projects.index');
     }
 
     /**
