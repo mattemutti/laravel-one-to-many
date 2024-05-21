@@ -6,7 +6,8 @@
             <div class="d-flex justify-content-between">
                 <h1>MATTE'S PROJECTS</h1>
                 <div>
-                    <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}"><i class="fa fa-pencil" aria-hidden="true"></i> NewProject</a>
+                    <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}"><i class="fa fa-pencil"
+                            aria-hidden="true"></i> NewProject</a>
                 </div>
             </div>
         </section>
@@ -18,6 +19,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Title</th>
                         <th scope="col">Slug</th>
+                        <th scope="col">Date</th>
                         <th scope="col">Actions </th>
                     </tr>
                 </thead>
@@ -27,10 +29,12 @@
                             <td scope="row">{{ $project->id }}</td>
                             <td>{{ $project->title }}</td>
                             <td>{{ $project->slug }}</td>
+                            <td>{{ $project->create_data }}</td>
 
                             <td>
                                 <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">View</a>
-                                /Edit/Delete
+                                <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                                /Delete
                             </td>
                         </tr>
                     @empty
