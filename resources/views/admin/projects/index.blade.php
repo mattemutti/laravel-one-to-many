@@ -20,11 +20,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Image</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Slug</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Repo</th>
-                        <th scope="col">Code</th>
-                        <th scope="col">Video</th>
                         <th scope="col">Actions </th>
                     </tr>
                 </thead>
@@ -34,16 +30,11 @@
                             <td scope="row">{{ $project->id }}</td>
                             <td>{{ $project->cover_image }}</td>
                             <td>{{ $project->title }}</td>
-                            <td>{{ $project->slug }}</td>
                             <td>{{ $project->create_data }}</td>
-                            <td>{{ $project->repo }}</td>
-                            <td>{{ $project->code }}</td>
-                            <td>{{ $project->video }}</td>
 
                             <td>
                                 <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">View</a>
                                 <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
-
 
                                 <!-- Modal trigger button -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
