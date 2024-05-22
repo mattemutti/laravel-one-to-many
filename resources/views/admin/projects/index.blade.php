@@ -28,7 +28,15 @@
                     @forelse ($projects as $project)
                         <tr class="">
                             <td scope="row">{{ $project->id }}</td>
-                            <td>{{ $project->cover_image }}</td>
+                            <td>
+                                @if (Str::startsWith($project->cover_image, 'https://'))
+                                    <img width="140" loading="lazy" src="{{ $project->cover_image }}"
+                                        alt="{{ $project->title }}">
+                                @else
+                                    <img width="140" loading="lazy" src="{{ asset('storage/' . $project->cover_image) }}"
+                                        alt="{{ $project->title }}">
+                                @endif
+                            </td>
                             <td>{{ $project->title }}</td>
                             <td>{{ $project->create_data }}</td>
 
