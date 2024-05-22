@@ -23,10 +23,13 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5|max:150',
+            'cover_image' => 'nullable',
             'slug' => 'nullable',
             'description' => 'nullable',
             'create_data' => 'nullable',
-            'repo' => 'nullable'
+            'repo' => 'nullable',
+            'code' => 'nullable',
+            'video' => 'nullable'
         ];
     }
 }

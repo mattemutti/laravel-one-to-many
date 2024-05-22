@@ -23,6 +23,16 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="cover_image" class="form-label">Image</label>
+                <input type="file" class="form-control" name="cover_image" id="cover_image"
+                    aria-describedby="cover_imageeHelper" placeholder="project" @error('cover_image') is-invalid @enderror
+                    value="{{ old('cover_image') }}" />
+                <small id="cover_imageHelper" class="form-text text-muted">Type a image for this project</small>
+                @error('cover_image')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="create_data" class="form-label">Date</label>
                 <input type="text" class="form-control" name="create_data" id="create_data"
                     aria-describedby="create_dataHelper" placeholder="project date"
@@ -43,16 +53,40 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <div>
-
-                <textarea name="description" id="description" cols="100" rows="10"
-                    class="@error('description') is-invalid @enderror">
-                {{ old('description') }}{{ $project->description }}
-            </textarea>
-                @error('description')
+            <div class="mb-3">
+                <label for="code" class="form-label">Code</label>
+                <input type="text" class="form-control" name="code" id="code" aria-describedby="codeHelper"
+                    placeholder="project date" @error('code') is-invalid @enderror
+                    value="{{ $project->code }}{{ old('code') }}" />
+                <small id="codeHelper" class="form-text text-muted">Type link the code for this project</small>
+                @error('code')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="mb-3">
+                <label for="video" class="form-label">Video</label>
+                <input type="text" class="form-control" name="video" id="video" aria-describedby="videoHelper"
+                    placeholder="project date" @error('video') is-invalid @enderror
+                    value="{{ $project->video }}{{ old('video') }}" />
+                <small id="videoHelper" class="form-text text-muted">Type link the video for this project</small>
+                @error('video')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="video" class="form-label">Description</label>
+                <div class="form-floating">
+                    <textarea name="description" id="description" class="form-control" @error('description') is-invalid @enderror
+                        placeholder="Leave a comment here"style="height: 100px">{{ $project->description }}{{ old('description') }}</textarea>
+                    <label for="floatingTextarea">
+                        @error('description')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </label>
+
+                </div>
+            </div>
+
 
             <button type="submit" class="btn btn-secondary">Update</button>
 
