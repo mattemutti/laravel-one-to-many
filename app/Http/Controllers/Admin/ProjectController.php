@@ -7,6 +7,8 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
 use Faker\Generator as Faker;
+use Storage;
+use Str;
 
 class ProjectController extends Controller
 {
