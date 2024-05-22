@@ -38,16 +38,16 @@ class ProjectController extends Controller
         //validiamo
         $validated = $request->validated();
 
-        $slug = $request->title;
+        //$slug = $request->title;
+        $slug = Str::slug($request->title, '-');
         $validated['slug'] = $slug;
+        //dd($slug);
 
         if ($request->has('cover_image')) {
             $image_path = Storage::put('uploads', $validated['cover_image']);
             //dd($validated, $image_path);
             $validated['cover_image'] = $image_path;
         }
-
-
 
         //creiamo
         Project::create($validated);
@@ -77,6 +77,8 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $validated = $request->validated();
+        $slug = Str::slug($request->title, '-');
+        $validated['slug'] = $slug;
 
         if ($request->has('cover_image')) {
 
