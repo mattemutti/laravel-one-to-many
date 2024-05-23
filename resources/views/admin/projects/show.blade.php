@@ -19,6 +19,7 @@
                     </div>
                     <div class="card-body">Title: {{ $project->title }}</div>
                     <div class="card-body">Slug: {{ $project->slug }}</div>
+                    <div class="metadata">Type: {{ $project->type ? $project->type->name : 'No-type' }}</div>
                     <div class="card-body">Create: {{ $project->create_data }}</div>
                 </div>
                 <div class="card">
