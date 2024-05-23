@@ -20,6 +20,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Image</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Date</th>
                         <th scope="col">Actions </th>
                     </tr>
@@ -38,6 +39,14 @@
                                 @endif
                             </td>
                             <td>{{ $project->title }}</td>
+                            <td>
+                                @forelse ($types as $type)
+                                    @if ($project->type_id == $type->id)
+                                        {{ $type->name }}
+                                    @endif
+                                @empty
+                                @endforelse
+                            </td>
                             <td>{{ $project->create_data }}</td>
 
                             <td>
