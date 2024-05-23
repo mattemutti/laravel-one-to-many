@@ -41,10 +41,6 @@
                 </select>
             </div>
 
-
-
-
-
             <div class="mb-3">
                 <label for="create_data" class="form-label">Date</label>
                 <input type="text" class="form-control @error('create_data') is-invalid @enderror" name="create_data"
