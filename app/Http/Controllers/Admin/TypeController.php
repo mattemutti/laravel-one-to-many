@@ -53,7 +53,7 @@ class TypeController extends Controller
 
         Type::create($validated);
 
-        return view('admin.types.index')->with('message', 'Project Create Sucessufully');
+        return to_route('admin.types.index')->with('message', 'Project Create Sucessufully');
     }
 
     /**
