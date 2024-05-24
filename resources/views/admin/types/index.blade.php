@@ -58,13 +58,13 @@
                                         role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="modalTitleId-{{ $type->id }}">
+                                                <h5 class="modal-title text-danger" id="modalTitleId-{{ $type->id }}">
                                                     Attention! Deleting: {{ $type->title }}
                                                 </h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body text-danger">
                                                 Attention! You are about to delete this record. The operation is DESTRUCTIVE
                                                 ❌❌❌
                                             </div>
@@ -74,7 +74,7 @@
                                                 </button>
 
 
-                                                <form action="{{ route('admin.projects.destroy', $type) }}" method="post">
+                                                <form action="{{ route('admin.types.destroy', $type) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
 

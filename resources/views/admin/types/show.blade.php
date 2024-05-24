@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('partials.message-confirm')
         <div class="row">
             <div class="col text-danger text-center">
                 <div>
