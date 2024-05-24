@@ -58,12 +58,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-danger"
-                                href="{{ route('admin.projects.index') }}">{{ __('Type') }}</a>
+                                href="{{ route('admin.types.index') }}">{{ __('Type') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-danger"
-                                href="{{ route('admin.projects.index') }}">{{ __('Contacts') }}</a>
-                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
