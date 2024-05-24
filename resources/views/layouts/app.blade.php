@@ -19,11 +19,11 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg_dark">
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg_dark  ">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">

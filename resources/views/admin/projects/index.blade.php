@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <section class="py-4">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between text-danger">
                 <h1>MATTE'S PROJECTS</h1>
                 <div>
-                    <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}"><i class="fa fa-pencil"
+                    <a class="btn btn-outline-danger" href="{{ route('admin.projects.create') }}"><i class="fa fa-pencil"
                             aria-hidden="true"></i> NewProject</a>
                 </div>
             </div>
@@ -14,22 +14,22 @@
         @include('partials.message-confirm')
 
         <div class="table-responsive">
-            <table class="table table-light">
+            <table class="table table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Actions </th>
+                        <th scope="col" class="text-primary">ID</th>
+                        <th scope="col" class="text-primary">Image</th>
+                        <th scope="col" class="text-primary">Title</th>
+                        <th scope="col" class="text-primary">Type</th>
+                        <th scope="col" class="text-primary">Date</th>
+                        <th scope="col" class="text-primary">Actions </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($projects as $project)
-                        <tr class="">
-                            <td scope="row">{{ $project->id }}</td>
-                            <td>
+                        <tr>
+                            <td class="text-danger" scope="row">{{ $project->id }}</td>
+                            <td class="text-danger">
                                 @if (Str::startsWith($project->cover_image, 'https://'))
                                     <img width="140" loading="lazy" src="{{ $project->cover_image }}"
                                         alt="{{ $project->title }}">
@@ -38,8 +38,8 @@
                                         alt="{{ $project->title }}">
                                 @endif
                             </td>
-                            <td>{{ $project->title }}</td>
-                            <td>
+                            <td class="text-danger">{{ $project->title }}</td>
+                            <td class="text-danger">
                                 @forelse ($types as $type)
                                     @if ($project->type_id == $type->id)
                                         {{ $type->name }}
@@ -47,11 +47,14 @@
                                 @empty
                                 @endforelse
                             </td>
-                            <td>{{ $project->create_data }}</td>
+                            <td class="text-danger">{{ $project->create_data }}</td>
 
                             <td>
-                                <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">View</a>
-                                <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                                <a class="btn
+                                btn-outline-success"
+                                    href="{{ route('admin.projects.show', $project) }}">View</a>
+                                <a class="btn btn-outline-warning"
+                                    href="{{ route('admin.projects.edit', $project) }}">Edit</a>
 
                                 <!-- Modal trigger button -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
