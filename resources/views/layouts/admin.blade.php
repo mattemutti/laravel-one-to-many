@@ -27,7 +27,7 @@
 
         <nav class="navbar navbar-expand-md bg_dark">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
                     <div class="logo_laravel">
                         <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg"
                             style="width: 150px">
@@ -105,6 +105,7 @@
                 </div>
             </div>
         </nav>
+        {{-- Navbar --}}
 
         <main class="">
             @yield('content')

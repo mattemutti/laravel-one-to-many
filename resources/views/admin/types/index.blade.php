@@ -35,8 +35,8 @@
                             <td>
                                 <a class="btn
                             btn-outline-success"
-                                    href="{{ route('admin.projects.show', $type) }}">View</a>
-                                <a class="btn btn-outline-warning" href="{{ route('admin.projects.edit', $type) }}">Edit</a>
+                                    href="{{ route('admin.types.show', $type) }}">View</a>
+                                <a class="btn btn-outline-warning" href="{{ route('admin.types.edit', $type) }}">Edit</a>
 
                                 <!-- Modal trigger button -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
