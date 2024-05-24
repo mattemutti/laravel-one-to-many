@@ -4,10 +4,10 @@
     <div class="container">
         <section class="py-4">
             <div class="d-flex justify-content-between text-danger">
-                <h1>TYPES PROJECTS</h1>
+                <h1>TYPES</h1>
                 <div>
-                    <a class="btn btn-outline-danger" href="{{ route('admin.projects.create') }}"><i class="fa fa-pencil"
-                            aria-hidden="true"></i> NewProject</a>
+                    <a class="btn btn-outline-danger" href="{{ route('admin.types.create') }}"><i class="fa fa-pencil"
+                            aria-hidden="true"></i> NewType</a>
                 </div>
             </div>
         </section>
@@ -18,9 +18,10 @@
                 <thead>
                     <tr>
                         <th scope="col" class="text-primary">ID</th>
+                        <th scope="col" class="text-primary">Image</th>
                         <th scope="col" class="text-primary">Name</th>
                         <th scope="col" class="text-primary">Slug</th>
-
+                        <th scope="col" class="text-primary">Version</th>
                         <th scope="col" class="text-primary">Actions </th>
                     </tr>
                 </thead>
@@ -28,9 +29,13 @@
                     @forelse ($types as $type)
                         <tr>
                             <td class="text-danger" scope="row">{{ $type->id }}</td>
+                            <td class="text-danger">
+                                <img width="140" loading="lazy" src="{{ asset('storage/' . $type->cover_image) }}"
+                                    alt="{{ $type->name }}">
+                            </td>
                             <td class="text-danger">{{ $type->name }}</td>
-
                             <td class="text-danger">{{ $type->slug }}</td>
+                            <td class="text-danger">{{ $type->version }}</td>
 
                             <td>
                                 <a class="btn

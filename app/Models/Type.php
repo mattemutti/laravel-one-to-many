@@ -10,14 +10,14 @@ class Type extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = ['name', 'description', 'slug', 'cover_image', 'version'];
 
     /**
      * Get all of the Projects for the Type
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Projects(): HasMany
+    public function types(): HasMany
     {
         return $this->hasMany(Project::class);
     }
